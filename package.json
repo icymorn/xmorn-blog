@@ -17,7 +17,8 @@
     "connect-mongo": "*",
     "connect-flash": "*",
     "async": "*",
-    "markdown": "*"
+    "markdown": "*",
+    "node-sass": "*"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
