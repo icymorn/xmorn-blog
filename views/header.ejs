@@ -6,27 +6,18 @@
 		<link rel="stylesheet" type="text/css" href="/css/common.css">
 	</head>
 	<body>
-		<div id="header">
-			<h1><%= title %></h1>
+		<h1 id="header"><%= logo %></h1><div id="nav">
+			<span><a title="index" href="/">Home</a></span><% if (!user) {%><span><a title="login" href="/login">Login</a></span><span><a title="register" href="/reg">Regester</a></span><% }else{ %><span><a title="logout" href="/logout">Logout</a></span><span><a title="post" href="/post">Post</a></span><span><a title="post" href="/upload">Upload</a></span><% } %>
 		</div>
-		<div id="nav">
-			<span><a title="index" href="/">Home</a></span>
-			<% if (!user) {%>
-				<span><a title="login" href="/login">Login</a></span>
-				<span><a title="register" href="/reg">Regester</a></span>
-			<% }else{ %>
-				<span><a title="logout" href="/logout">Logout</a></span>
-				<span><a title="post" href="/post">Post</a></span>
-			<% } %>
-		</div>
+		<div id="page"><span><%= page %></span></div>
 		<div id="article">
 
 			<% if (success) { %>
-				<span><%= success %></span>
+				<span class="success"><%= success %></span>
 			<% } %>
 
 			<% if (error) { %>
-				<span><%= error %></span>
+				<span class="error"><%= error %></span>
 			<% } %>
 <!-- 
 		</div>

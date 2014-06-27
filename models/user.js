@@ -1,6 +1,8 @@
-var mongodb = require("./db.js");
+var mongodb = require("./db.js"),
+    ObjectId = require('mongodb').ObjectID;
 
-function User (user) {
+function User(user) {
+    this._id = user._id;
 	this.username = user.username;
 	this.password = user.password;
 	this.email = user.email;
@@ -9,20 +11,16 @@ function User (user) {
 module.exports = User;
 
 User.prototype.save = function(callback) {
-	var user = {
+    var user = {
 		username: this.username,
 		password: this.password,
 		email: this.email
 	};
 
-	mongodb.open(function (err, db) {
-		if (err) {
-			return callback(err);
-		}
+    mongodb.get(function (db) {
 
 		db.collection('user', function (err, collection) {
 			if (err) {
-				mongodb.close();
 				return callback(err);
 			}
 
@@ -40,21 +38,16 @@ User.prototype.save = function(callback) {
 };
 
 User.get = function (username, callback) {
-	mongodb.open(function (err, db) {
-		if (err) {
-			return callback(err);
-		};
+    mongodb.get(function (db) {
 
-		db.collection('users', function (err, collection) {
+		db.collection('user', function (err, collection) {
 			if (err) {
-				mongodb.close();
 				return callback(err);
 			};
 
 			collection.findOne({
 				username: username
 			}, function (err, user) {
-				mongodb.close();
 				if (err) {
 					return callback(err);
 				};
@@ -62,4 +55,23 @@ User.get = function (username, callback) {
 			});
 		});
 	});
+};
+
+User.getById = function (userid, callback) {
+    mongodb.get(function (db) {
+
+        db.collection('user', function (err, collection) {
+            if (err) {
+                return callback(err);
+            };
+            collection.findOne({
+                _id:new ObjectId(userid)
+            }, function (err, user) {
+                if (err) {
+                    return callback(err);
+                };
+                callback(null, user);
+            });
+        });
+    });
 };
