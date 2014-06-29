@@ -2,25 +2,11 @@
 var crypto = require('crypto'),
 	User = require('../models/user.js'),
     Post = require('../models/post.js'),
+	Util = require('../routes/util.js'),
     Async = require('async'),
     fs = require("fs");
 
 module.exports = function (app) {
-    function checkNotLogin(req, res, next) {
-        if (!req.session.user) {
-            req.flash('error', "Please login!");
-            return res.redirect("/login");
-        }
-        next();
-    }
-
-    function checkLogin(req, res, next) {
-        if (req.session.user) {
-            req.flash('error', "You've login!");
-            return res.redirect("/");
-        }
-        next();
-    }
 
     app.get('/', function (req, res) {
         var posts;
@@ -57,7 +43,7 @@ module.exports = function (app) {
 	});
 
 	//login
-	app.get('/login', checkLogin);
+	app.get('/login', Util.needLogout);
 	app.get('/login', function (req, res) {
 		res.render('login', {
 			page: 'Login',
@@ -67,7 +53,7 @@ module.exports = function (app) {
 		});
 	});
 
-	app.post('/login', checkLogin);
+	app.post('/login', Util.needLogout);
     app.post('/login', function (req, res) {
 		var username = req.body.username,
 			md5 = crypto.createHash('md5'),
@@ -94,7 +80,7 @@ module.exports = function (app) {
 	});
 
 	//post
-    app.get('/post', checkNotLogin);
+    app.get('/post', Util.needLogin);
     app.get('/post', function (req, res) {
 		res.render('post', {
 			page: 'Post',
@@ -104,7 +90,7 @@ module.exports = function (app) {
 		});
 	});
 
-	app.post('/post', checkNotLogin);
+	app.post('/post', Util.needLogin);
 	app.post('/post', function (req, res) {
 	    var currentUser = req.session.user,
             post = new Post(null, currentUser._id, req.body.title, req.body.content, new Date());
@@ -119,7 +105,7 @@ module.exports = function (app) {
 	});
 
 	//logout
-	app.get('/logout', checkNotLogin);
+	app.get('/logout', Util.needLogin);
 	app.get('/logout', function (req, res) {
 		req.session.user = null;
 		req.flash('success', "Logout successfully.");
@@ -127,7 +113,7 @@ module.exports = function (app) {
 	});
 
 	//register
-	app.get('/reg', checkLogin);
+	app.get('/reg', Util.needLogout);
 	app.get('/reg', function (req, res) {
 		res.render('reg', {
 			page: 'Register',
@@ -137,7 +123,7 @@ module.exports = function (app) {
 		});
 	});
 
-	app.post('/reg', checkLogin);
+	app.post('/reg', Util.needLogout);
 	app.post('/reg', function (req, res) {
 		var username = req.body.username,
 			password = req.body.password,
@@ -173,7 +159,7 @@ module.exports = function (app) {
 		});
 	});
 
-	app.post("/upload", checkNotLogin);
+	app.post("/upload", Util.needLogin);
 	app.post("/upload", function (req, res) {
 	    for (var i in req.files) {
 	        if (req.files[i].size == 0) {
@@ -190,7 +176,7 @@ module.exports = function (app) {
 	    res.redirect("/upload");
 	});
 
-	app.get("/upload", checkNotLogin);
+	app.get("/upload", Util.needLogin);
 	app.get("/upload", function (req, res) {
 
 	    res.render('upload', {
@@ -235,30 +221,41 @@ module.exports = function (app) {
 	    });
 	});
 
-	app.get('/info', function (req, res) {
-	    var uid = "539ebc74d1c4c3f40269034e",
-            user;
-	    Async.waterfall([function (callback) {
-	        User.getById(uid, callback);
-	    }, function (_user, callback) {
-	        if (_user) {
-	            user = _user;
-	            Post.getByUser(user._id.toString(), function (err, posts) {
-	                if (err) {
-	                    callback(err);
-	                }
-	                posts.forEach(function (post) {
-	                    post.user = _user;
-	                });
-	                callback(null, posts);
-	            });
-	        } else {
-	            callback("no such user");
-	        }
-	    }
-	    ], function (err, result) {
-	        var page = err || user.username + "'s posts";
+	app.get('/:page', function (req, res) {
+		var page = req.param("page");
+	    // var uid = "539ebc74d1c4c3f40269034e",
+     //        user;
+	    // Async.waterfall([function (callback) {
+	    //     User.getById(uid, callback);
+	    // }, function (_user, callback) {
+	    //     if (_user) {
+	    //         user = _user;
+	    //         Post.getByUser(user._id.toString(), function (err, posts) {
+	    //             if (err) {
+	    //                 callback(err);
+	    //             }
+	    //             posts.forEach(function (post) {
+	    //                 post.user = _user;
+	    //             });
+	    //             callback(null, posts);
+	    //         });
+	    //     } else {
+	    //         callback("no such user");
+	    //     }
+	    // }
+	    // ], function (err, result) {
+	    //     var page = err || user.username + "'s posts";
 
+	    //     res.render('index', {
+	    //         page: page,
+	    //         posts: result || [],
+	    //         user: req.session.user,
+	    //         error: req.flash('error').toString(),
+	    //         success: req.flash('success').toString()
+	    //     });
+
+	    // });
+result = null;
 	        res.render('index', {
 	            page: page,
 	            posts: result || [],
@@ -266,8 +263,6 @@ module.exports = function (app) {
 	            error: req.flash('error').toString(),
 	            success: req.flash('success').toString()
 	        });
-
-	    });
 
 	    //User.getById("539ebc74d1c4c3f40269034e",function(err, user){
 	    //    console.log(user);
