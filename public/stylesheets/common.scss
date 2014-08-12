@@ -1,0 +1,18 @@
+$page-width: 800px;
+$heading-font-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$paragraphs-font-stack: Consolas, monaco, monospace;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    width: $page-width;
+    margin: 0 auto;
+    font-family: $heading-font-stack;
+    
+    
+    h1 {
+        font-weight: lighter;
+    }
+}

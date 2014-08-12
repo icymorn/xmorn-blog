@@ -3,7 +3,9 @@
  */
 var config = {
     username: 'moe',
-    password: 'aiminmin'
+    password: 'aiminmin',
+    db: 'xmorn',
+    host: 'localhost'
 };
 
 module.exports = config;

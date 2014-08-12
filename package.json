@@ -6,14 +6,15 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "cookie-session": "^1.0.2",
     "debug": "~0.7.4",
     "ejs": "~0.8.5",
+    "express": "~4.2.0",
+    "md5": "~1.0.0",
+    "morgan": "~1.0.0",
     "node-sass": "*",
-    "md5": "~1.0.0"
+    "static-favicon": "~1.0.0"
   }
 }

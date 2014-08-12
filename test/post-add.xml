@@ -1,0 +1,73 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list>
+      <Biscuit>
+        <option name="date" value="-1" />
+        <option name="domain" value="localhost" />
+        <option name="name" value="express:sess" />
+        <option name="path" value="/" />
+        <option name="value" value="eyJ1c2VyIjp7Il9pZCI6IjUzZTliZWIwYWU2MzJlOTAzY2ZhNTEwMCIsInVzZXJuYW1lIjoibW9lIiwicGFzc3dvcmQiOiI2NzBiMTQ3MjhhZDk5MDJhZWNiYTMyZTIyZmE0ZjZiZCJ9fQ==" />
+      </Biscuit>
+      <Biscuit>
+        <option name="date" value="-1" />
+        <option name="domain" value="localhost" />
+        <option name="name" value="express:sess.sig" />
+        <option name="path" value="/" />
+        <option name="value" value="Ke--r2wej-GrVi08UR6-AjnSX9w" />
+      </Biscuit>
+    </list>
+  </option>
+  <option name="httpMethod" value="POST" />
+  <option name="urlBase" value="http://localhost:3000" />
+  <option name="urlPath" value="/api/post/add" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="*/*" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Cache-Control" />
+        <option name="value" value="no-cache" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Content-Type" />
+        <option name="value" value="application/x-www-form-urlencoded" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="title" />
+        <option name="value" value="titlevalue" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="content" />
+        <option name="value" value="contentValue" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="time" />
+        <option name="value" value="1407845539406" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="catalog" />
+        <option name="value" value="catalog" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="views" />
+        <option name="value" value="5" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="tags" />
+        <option name="value" value="tags" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="true" />
+  <option name="haveTextToSend" value="false" />
+  <option name="haveFileToSend" value="false" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="" />
+  <option name="filesToSend" value="" />
+</RestClientRequest>
