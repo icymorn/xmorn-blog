@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: #fafafa; }
+
+#nav {
+  border-top: 5px solid #000;
+  height: 3em;
+  line-height: 3em;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #eee; }
+  #nav:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    top: 100%;
+    width: 150%;
+    height: 30px;
+    left: -25%;
+    right: -25%;
+    background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.3), rgba(97, 97, 97, 0) 30%);
+    background: radial-gradient(ellipse at 50% -3%, rgba(0, 0, 0, 0.3), rgba(97, 97, 97, 0) 30%); }
+  #nav #nav-inner {
+    height: 3em;
+    width: 850px;
+    margin: 0 auto; }
+    #nav #nav-inner:after {
+      content: '';
+      display: block;
+      clear: both; }
+  #nav #logo {
+    float: left;
+    font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif; }
+  #nav #menu {
+    display: block;
+    float: right;
+    height: 100%; }
+    #nav #menu li {
+      box-sizing: border-box;
+      list-style: none;
+      display: inline-block;
+      font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+      padding: 0 10px; }
+      #nav #menu li a {
+        color: black;
+        text-decoration: none; }
+      #nav #menu li:hover {
+        border-bottom: 1px solid black; }
+
+#container {
+  width: 850px;
+  margin: 0 auto;
+  font-family: "Microsoft Yahei", 'Droid Serif', serif;
+  font-size: 1.25em;
+  line-height: 150%;
+  border-top: none;
+  box-sizing: border-box; }
+  #container p {
+    margin-bottom: 1em;
+    text-indent: 2em; }
+
+#title {
+  font-size: 2em;
+  line-height: 3em;
+  font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+  text-align: center;
+  background: #eee; }
+
+#posts {
+  width: 850px;
+  margin: 0 auto 2em;
+  padding-top: 2em; }
+  #posts .post {
+    list-style: none;
+    background: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 1em; }
+    #posts .post .post-head {
+      float: left;
+      padding: 1em; }
+    #posts .post .post-title {
+      font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+      font-size: 1.1em; }
+    #posts .post .post-time {
+      font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+      font-size: 0.9em; }
+    #posts .post .post-tail {
+      float: right;
+      padding: 1em; }
+    #posts .post:hover {
+      border: 1px solid #ccc;
+      box-shadow: 0 0 5px #eee; }
+    #posts .post:after {
+      content: '';
+      display: block;
+      clear: both; }
+
+#article {
+  width: 850px;
+  padding-top: 2em;
+  margin: 0 auto 2em;
+  font-family: "Microsoft Yahei", 'Droid Serif', serif;
+  font-size: 1.1em;
+  box-sizing: border-box; }
+  #article p {
+    line-height: 150%;
+    margin-bottom: 1em;
+    text-indent: 2em; }
+
+#footer {
+  height: 300px;
+  background-color: #555; }
+
+/*# sourceMappingURL=common.css.map */
