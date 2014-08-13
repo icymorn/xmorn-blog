@@ -25,8 +25,8 @@ function Response(result, code, lang) {
         lang = 'en-us';
     }
     return {
-        code: 1,
-        msg: error[lang][1],
+        code: code,
+        msg: error[lang][code],
         result: result
     };
 }

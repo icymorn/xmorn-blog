@@ -2,10 +2,13 @@
  * Created by moe on 8/12/14.
  */
 var config = {
-    username: 'moe',
-    password: 'aiminmin',
-    db: 'xmorn',
-    host: 'localhost'
+    db: {
+        name: 'xmorn',
+        host: 'localhost',
+    },
+    setting: {
+        postsPerPage: 10
+    }
 };
 
 module.exports = config;

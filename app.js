@@ -7,6 +7,7 @@ var session = require('cookie-session');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
+var post = require('./routes/post');
 var api = require('./routes/api');
 var sass = require('node-sass');
 //var compass = require('node-compass');
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use(compass({mode: 'expanded'}));
 
 app.use('/', routes);
+app.use('/post', post);
 app.use('/api', api);
 
 /// catch 404 and forward to error handler
