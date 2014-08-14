@@ -200,7 +200,7 @@
   font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
   text-align: center;
   background: #eee; }
-  #title-editor-wrap #title-editor {
+  #title-editor-wrap #new-title {
     background: transparent;
     height: 100%;
     display: inline-block;
@@ -212,7 +212,7 @@
     padding: 0.5em 0;
     border-bottom: 1px dashed transparent;
     font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif; }
-    #title-editor-wrap #title-editor:focus {
+    #title-editor-wrap #new-title:focus {
       outline: none;
       border-bottom: 1px dashed #00B7FF; }
 

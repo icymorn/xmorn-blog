@@ -31,6 +31,17 @@ router.get('/add', function(req, res) {
     });
 });
 
+router.post('/add', util.requireLogin);
+
+router.post('/add', function(req, res) {
+    var title = req.param('new-title');
+    var content = req.param('new-content')
+    return res.render('write', {
+        title: 'write a post',
+        login: !!req.session.user
+    });
+});
+
 router.get('/:postId', function(req, res) {
     var postId = req.params.postId;
     Post.getById(postId, function(err, post){
