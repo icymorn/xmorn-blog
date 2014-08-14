@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
         redirect: redirect,
         redirectUrl: url,
         msg: (response)? response.msg : 'Nothing to show.',
-        login: !req.session.user
+        login: !!req.session.user
     });
 });
 

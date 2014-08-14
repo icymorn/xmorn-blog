@@ -1,0 +1,7 @@
+<% if (login === true) { %>
+<a class="nav-item" href="/user/logout"><span class="icon-logout"></span></a>
+<a class="nav-item" href="/user/setting"><span class="icon-cog"></span></a>
+<a class="nav-item" href="/post/add"><span class="icon-pencil"></span></a>
+<% } else { %>
+    <a class="nav-item" href="/user/login"><span class="icon-user"></span></a>
+<% } %>

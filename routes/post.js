@@ -5,6 +5,7 @@ var express = require('express');
 var Post = require('../model/post.js');
 var router = express.Router();
 var settings = require('../setting.js').setting;
+var util = require('./util.js');
 
 /* GET home page. */
 router.get('/page/:page', function(req, res) {
@@ -16,8 +17,17 @@ router.get('/page/:page', function(req, res) {
             result: posts,
             postsPerPage: settings.postsPerPage,
             currentPage: page + 1,
-            login: !req.session.user
+            login: !!req.session.user
         });
+    });
+});
+
+router.get('/add', util.requireLogin);
+
+router.get('/add', function(req, res) {
+    return res.render('write', {
+        title: 'write a post',
+        login: !!req.session.user
     });
 });
 
@@ -27,7 +37,7 @@ router.get('/:postId', function(req, res) {
         return res.render('article', {
             title: post.title,
             result: post,
-            login: !req.session.user
+            login: !!req.session.user
         });
     });
 });

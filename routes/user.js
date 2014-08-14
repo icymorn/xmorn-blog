@@ -10,7 +10,7 @@ router.get('/login', function(req, res) {
 
     return res.render('login', {
         title: 'Login',
-        login: false
+        login: !!req.session.user
     });
 
 });

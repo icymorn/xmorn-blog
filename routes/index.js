@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
         result: posts,
         postsPerPage: settings.postsPerPage,
         currentPage: 0,
-        login: !req.session.user
+        login: !!req.session.user
 
     });
   });
