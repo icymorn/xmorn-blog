@@ -1,9 +1,13 @@
-<%- include header %>
-<% posts.forEach(function (post, index) { %>
-	<div class="item">
-		<h3 class="title"><%- post.title %></h3>
-		<div class="content"><%- post.content %></div>
-		<div class="item-bottom"><span class="author"><a href="/u/<%- post.user._id %>"><%- post.user.username %></a></span><span class="time">@<%- post.time.toDateString() %></span></div>
-	</div>
-<% }); %>
-<%- include footer %>
+<!DOCTYPE html>
+<html>
+<% include includes/header.ejs %>
+<body>
+<div id="wrap">
+    <% include includes/nav.ejs %>
+    <div id="container">
+        <% include includes/post.ejs %>
+    </div>
+    <% include includes/footer.ejs %>
+</div>
+</body>
+</html>

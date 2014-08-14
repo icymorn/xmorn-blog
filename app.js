@@ -1,83 +1,75 @@
-﻿'use strict';
+﻿var express = require('express');
+var path = require('path');
+var favicon = require('static-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var session = require('cookie-session');
+var bodyParser = require('body-parser');
 
-var express    = require('express');
-var routes     = require('./routes');
-var http       = require('http');
-var path       = require('path');
-var MongoStore = require('connect-mongo')(express);
-var settings   = require('./settings');
-var flash      = require('connect-flash');
-var sass       = require('node-sass');
-
+var routes = require('./routes/index');
+var post = require('./routes/post');
+var api = require('./routes/api');
+var sass = require('node-sass');
+//var compass = require('node-compass');
 
 var app = express();
 
-app.configure(function () {
-    app.set('port', process.env.PORT || 3000);
-    app.set('views', __dirname + '/views');
-    app.set('view engine', 'ejs');
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 
-    app.use(express.favicon());
-    app.use(express.logger('dev'));
-    app.use(express.bodyParser({keepExtensions: true, uploadDir: './public/images'}));
+app.use(favicon());
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(cookieParser());
+app.use(session({ secret: 'secret'}));
 
-    app.use(express.methodOverride());
-    app.use(express.static(path.join(__dirname, 'public')));
-    app.use(express.cookieParser());
-    app.use(flash());
-    app.use(express.session({
-        secret: settings.cookieSecret,
-        key: settings.db,
-        cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 30
-        },
-        store: new MongoStore({
-            db: settings.db
-        })
-    }));
+app.use(sass.middleware({
+    src: __dirname + '/public',
+    dest: __dirname+ '/public',
+    debug: true,
+    outputStyle: 'expanded'
+}));
 
-    app.use(sass.middleware({
-        src: __dirname + '/precompile',
-        dest: __dirname+ '/public',
-        debug: true,
-        outputStyle: 'compressed'//'expanded'
-    }));
-    
-    app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
+//app.use(compass({mode: 'expanded'}));
 
-    if ('development' == app.get('env')) {
-        app.use(express.errorHandler());
-    }
+app.use('/', routes);
+app.use('/post', post);
+app.use('/api', api);
+
+/// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
-app.locals({
-    logo: 'XMORN',
-    script: [],
-    css: [],
-    getScriptTags: function () {
-        if (this.script.length >0 ) {
-            return this.script.map(function (filename) {
-                return '<script src=\"' + filename + '\"></script>';
-            }).join('\n');
-        }else{
-            return '';
-        }
+/// error handlers
 
-    },
-    getStyleTags: function () {
-        if (this.css.length >0 ) {
-            return this.css.map(function (filename) {
-                return '<link rel=\"stylesheet\" href=\"' + filename + '\"/>';
-            }).join('\n');
-        }else{
-            return '';
-        }
-    }
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
 
-http.createServer(app).listen(app.get('port'), function () {
-    console.log('Express server listening on port' + app.get('port'));
-});
 
-routes(app);
+module.exports = app;
