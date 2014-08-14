@@ -1,0 +1,17 @@
+@import "./variables.scss";
+
+$flash-height: 5em;
+$flash-width: 20em;
+
+#flash {
+  position: absolute;
+  top: 50%;
+  width: $flash-width;
+  margin-left: - $flash-width / 2;
+  left: 50%;
+  height: 15em;
+  text-align: center;
+  margin-top: -12em;
+  font-size: 1.5em;
+  font-family: $paragraphs-font-stack;
+}

@@ -69,7 +69,7 @@ router.post('/user/reg', function(req, res) {
  */
 router.get('/user/logout', function(req, res) {
     res.session.user = undefined;
-    return res.send(Response(null, ErrCode.LOGOUT_SUCCESS));
+    return res.send(Response(null, ErrCode.USER_LOGOUT_SUCCESS));
 });
 
 /**

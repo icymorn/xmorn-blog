@@ -10,7 +10,8 @@ router.get('/', function(req, res) {
         title: '迷晨',
         result: posts,
         postsPerPage: settings.postsPerPage,
-        currentPage: 0
+        currentPage: 0,
+        login: !req.session.user
 
     });
   });

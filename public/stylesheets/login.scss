@@ -1,0 +1,38 @@
+@import "./variables.scss";
+
+.login-submit {
+  padding: 4px 6px;
+}
+
+#login-form {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  margin-left: -200px;
+  left: 50%;
+  height: 15em;
+  margin-top: -12em;
+
+  .login-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+
+    &:focus {
+      border-bottom: solid 2px #969696;
+      outline: #00B7FF auto 5px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    padding: 0.5em 0;
+  }
+}
+
+.form-control {
+  padding: 10px;
+}

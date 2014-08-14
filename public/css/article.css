@@ -1,0 +1,11 @@
+#article {
+  width: 850px;
+  padding-top: 2em;
+  margin: 0 auto 2em;
+  font-family: "Microsoft Yahei", "Droid Serif", serif;
+  font-size: 1.1em;
+  box-sizing: border-box; }
+  #article p {
+    line-height: 150%;
+    margin-bottom: 1em;
+    text-indent: 2em; }

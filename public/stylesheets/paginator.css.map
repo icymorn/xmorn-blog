@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "file": "",
+  "sources": ["paginator.scss","./variables.scss"],
+  "names": [],
+  "mappings": "AAEA;EACE,OCHW;EDIX,QAAQ;EACR,WAAW;EACX,aCJsB;EDIxB,WAAW;IAGP,SAAS;IACT,SAAS;IACT,iBAAiB;IACjB,OAAO;IACP,OAAO;IACP,YAAY;IACZ,QAAQ;IACR,YAAY"
+}

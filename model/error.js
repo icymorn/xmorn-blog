@@ -15,7 +15,7 @@ var errCode = {
     USER_REGISTER_SUCCESS: 7,
 
     NEED_LOGIN: 8,
-    LOGOUT_SUCCESS: 9
+    USER_LOGOUT_SUCCESS: 9
 };
 
 module.exports = errCode;

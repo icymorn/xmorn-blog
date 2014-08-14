@@ -1,9 +1,31 @@
+#paginator {
+  width: 850px;
+  margin: 0 auto 1em;
+  font-size: 1.2em;
+  font-family: "Microsoft Yahei", 'Droid Serif', serif; }
+  #paginator a {
+    display: inline-block;
+    padding: 0.25em;
+    text-decoration: none;
+    color: #666;
+    width: 1.75em;
+    text-align: center;
+    border: 1px solid #eee;
+    background: #ccc; }
+
 * {
   margin: 0;
   padding: 0; }
 
 body {
   background-color: #fafafa; }
+
+body, html {
+  height: 100%; }
+
+#wrap {
+  min-height: 100%;
+  position: relative; }
 
 #nav {
   border-top: 5px solid #000;
@@ -18,10 +40,8 @@ body {
     z-index: 1;
     bottom: 0;
     top: 100%;
-    width: 150%;
+    width: 100%;
     height: 30px;
-    left: -25%;
-    right: -25%;
     background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.3), rgba(97, 97, 97, 0) 30%);
     background: radial-gradient(ellipse at 50% -3%, rgba(0, 0, 0, 0.3), rgba(97, 97, 97, 0) 30%); }
   #nav #nav-inner {
@@ -51,18 +71,6 @@ body {
       #nav #menu li:hover {
         border-bottom: 1px solid black; }
 
-#container {
-  width: 850px;
-  margin: 0 auto;
-  font-family: "Microsoft Yahei", 'Droid Serif', serif;
-  font-size: 1.25em;
-  line-height: 150%;
-  border-top: none;
-  box-sizing: border-box; }
-  #container p {
-    margin-bottom: 1em;
-    text-indent: 2em; }
-
 #title {
   font-size: 2em;
   line-height: 3em;
@@ -82,9 +90,13 @@ body {
     #posts .post .post-head {
       float: left;
       padding: 1em; }
-    #posts .post .post-title {
+    #posts .post .post-title a {
       font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
-      font-size: 1.1em; }
+      text-decoration: none;
+      color: #00B7FF;
+      font-size: 1.4em; }
+      #posts .post .post-title a:hover {
+        text-decoration: underline; }
     #posts .post .post-time {
       font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
       font-size: 0.9em; }
@@ -111,8 +123,14 @@ body {
     margin-bottom: 1em;
     text-indent: 2em; }
 
+#container {
+  padding-bottom: 5em; }
+
 #footer {
-  height: 300px;
+  height: 5em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   background-color: #555; }
 
 /*# sourceMappingURL=common.css.map */

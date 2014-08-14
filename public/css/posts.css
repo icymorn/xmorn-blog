@@ -1,0 +1,39 @@
+#title {
+  font-size: 2em;
+  line-height: 3em;
+  font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+  text-align: center;
+  background: #eee; }
+
+#posts {
+  width: 850px;
+  margin: 0 auto 2em;
+  padding-top: 2em; }
+  #posts .post {
+    list-style: none;
+    background: #fff;
+    border: 1px solid #eee;
+    margin-bottom: 1em; }
+    #posts .post .post-head {
+      float: left;
+      padding: 1em; }
+    #posts .post .post-title a {
+      font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+      text-decoration: none;
+      color: #00B7FF;
+      font-size: 1.4em; }
+      #posts .post .post-title a:hover {
+        text-decoration: underline; }
+    #posts .post .post-time {
+      font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+      font-size: 0.9em; }
+    #posts .post .post-tail {
+      float: right;
+      padding: 1em; }
+    #posts .post:hover {
+      border: 1px solid #ccc;
+      box-shadow: 0 0 5px #eee; }
+    #posts .post:after {
+      content: '';
+      display: block;
+      clear: both; }

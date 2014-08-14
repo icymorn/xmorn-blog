@@ -1,0 +1,15 @@
+#footer {
+  height: 5em;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #555;
+  line-height: 5em;
+  text-align: center; }
+  #footer #footer-inner {
+    color: #919191;
+    font-family: "Microsoft Yahei", "Droid Serif", serif;
+    width: 850px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2em; }

@@ -1,0 +1,16 @@
+@import "./variables.scss";
+
+#article {
+  width: $page-width;
+  padding-top: 2em;
+  margin: 0 auto 2em;
+  font-family: $paragraphs-font-stack;
+  font-size: 1.1em;
+  box-sizing: border-box;
+
+  p {
+    line-height: 150%;
+    margin-bottom: 1em;
+    text-indent: 2em;
+  }
+}

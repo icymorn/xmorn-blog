@@ -1,0 +1,52 @@
+/*
+Syntax error: Invalid CSS after "  margin-left": expected ";", was ": - $flash-widt..."
+        on line 10 of flash.scss
+
+5: 
+6: #flash {
+7:   position: absolute;
+8:   top: 50%;
+9:   width: $flash-width
+10:   margin-left: - $flash-width / 2;
+11:   left: 50%;
+12:   height: 15em;
+13:   margin-top: -12em;
+14: 
+15:   .login-input {
+
+Backtrace:
+flash.scss:10
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:1312:in `expected'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:1248:in `expected'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:1243:in `tok!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:692:in `block in declaration_or_ruleset'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:1288:in `call'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:1288:in `rethrow'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:698:in `declaration_or_ruleset'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:660:in `block_child'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:652:in `block_contents'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:641:in `block'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:634:in `ruleset'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:659:in `block_child'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:652:in `block_contents'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:116:in `stylesheet'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/engine.rb:409:in `_to_tree'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/engine.rb:274:in `render'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:186:in `each'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/exec.rb:489:in `watch_or_update'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/exec.rb:346:in `process_result'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/exec.rb:43:in `parse'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/lib/sass/exec.rb:22:in `parse!'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.3.10/bin/scss:13:in `<top (required)>'
+C:/Ruby200-x64/bin/scss:23:in `load'
+C:/Ruby200-x64/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"  margin-left\": expected \";\", was \": - $flash-widt...\"\A         on line 10 of flash.scss\A \A 5: \A 6: #flash {\A 7:   position: absolute;\A 8:   top: 50%;\A 9:   width: $flash-width\A 10:   margin-left: - $flash-width / 2;\A 11:   left: 50%;\A 12:   height: 15em;\A 13:   margin-top: -12em;\A 14: \A 15:   .login-input {"; }

@@ -55,7 +55,7 @@ Post.getById = function (id, callback) {
         }
 
         collection.findOne({
-            _id: new ObjectID(id)
+            _id: ObjectID(id)
         }, function (err, post) {
             if (err) {
                 return callback(err);
@@ -114,6 +114,16 @@ Post.get = function (offset, count, callback) {
             });
         });
 
+    });
+};
+
+/**
+ * the post id to be added
+ * @param id
+ */
+Post.addPV = function(id) {
+    mongodb.collection('post', function(err, collection) {
+        collection.update({ _id: ObjectID(id) }, { $inc: { view: 1}});
     });
 };
 
