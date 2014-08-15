@@ -16,7 +16,14 @@ var error = {
         7: 'Regists successfuly.',
 
         8: 'You need login.',
-        9: 'Logout successfuly.'
+        9: 'Logout successfuly.',
+
+        10: 'The post is pubished successfully.',
+        11: 'Post failed due to unknown reason.',
+        12: 'Post does not exist.',
+        13: 'This post is locked for comments,',
+        14: 'Delete fail.',
+        15: 'Delete successfully.'
     }
 };
 

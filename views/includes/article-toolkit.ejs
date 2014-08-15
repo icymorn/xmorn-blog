@@ -1,0 +1,16 @@
+<div id="article-toolkit">
+    <div id="article-toolkit-inner">
+        <% if (login) {%>
+            <a href="/post/edit/<%= result._id %>" class="icon-pencil toolkit-item">EDIT</a>
+            <a href="/post/del/<%= result._id %>" class="icon-trash toolkit-item">DELETE</a>
+            <% if (result.allowComment) {%>
+                <a class="icon-lock toolkit-item">COMMENT NOT ALLOWED</a>
+            <% } else {%>
+                <a class="icon-lock-open toolkit-item">COMMENT ALLOWED</a>
+            <% } %>
+        <% } else {%>
+            <a href="/post/<%= result._id %>" class="icon-link toolkit-item"></a>
+        <% } %>
+
+    </div>
+</div>

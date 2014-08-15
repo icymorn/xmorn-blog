@@ -25,9 +25,13 @@
         upper = Math.min(pageCount, displayLength);
     }
     for (i = lower; i <= upper; i++) {
-        numbers.push('<a class="page-number" href="/post/page/' + i + '">' + i + "</a>");
+        if ( i === current ){
+            numbers.push('<a class="page-number active" href="/post/page/' + i + '">' + i + "</a>");
+        } else {
+            numbers.push('<a class="page-number" href="/post/page/' + i + '">' + i + "</a>");
+        }
     }
-    if (current < pageCount - 1) {
+    if (current < pageCount ) {
         numbers.push('<a class="prev" href="/post/page/' + (current + 1) +'">&#8594;</a>');
     }
     return numbers;
@@ -39,15 +43,18 @@
     <li class="post">
         <div class="post-head">
             <div class="post-title"><a href="/post/<%= post._id %>"><%= post.title %></a></div>
-            <div class="post-time"><%= time.getUTCFullYear() + '-' + time.getUTCMonth() + '-' + time.getDate() %></div>
+            <div class="post-time"><span class="icon-clock"><%= time.getUTCFullYear() + '-' + time.getUTCMonth() + '-' + time.getDate() %></span></div>
         </div>
         <div class="post-tail">#<%= i %></div>
     </li>
       <% }); %>
 </ul>
 <div id="paginator">
-    <% if (result.posts !== null) {
-       var count = Math.ceil(result.count / postsPerPage);
-    %>
-    <%- generatePaginator(currentPage, count).join('') %>
+    <div id="paginator-inner">
+        <% if (result.posts !== null) {
+            var count = Math.ceil(result.count / postsPerPage);
+        %>
+        <%- generatePaginator(currentPage, count).join('') %>
+    </div>
+
    <% }%></div>

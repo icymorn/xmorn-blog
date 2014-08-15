@@ -1,19 +1,28 @@
 @import "./variables.scss";
 
 #paginator {
-  width: $page-width;
   margin: 0 auto 1em;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: $paragraphs-font-stack;
+  text-align: center;
 
-  a {
+  #paginator-inner {
     display: inline-block;
-    padding: 0.25em;
-    text-decoration: none;
-    color: #666;
-    width: 1.75em;
-    text-align: center;
-    border: 1px solid #eee;
-    background: #ccc;
+    border: 1px solid #aaa;
+    position: relative;
+    background: #fcfcfc;
+    a {
+      display: inline-block;
+      padding: 0.2em;
+      text-decoration: none;
+      color: #444;
+      width: 1.5em;
+      text-align: center;
+      &.active {
+        background: #9ebbff;
+      }
+
+    }
   }
+
 }

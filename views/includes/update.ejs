@@ -1,7 +1,7 @@
-<form id="new-post" method="post" autocomplete="off">
-    <div id="title-editor-wrap"><input type="text" id="new-title" placeholder="INPUT TITLE" name="title"></div>
-    <div id="content-editor" contenteditable="true">CONTENT HERE</div>
-    <input type="hidden" id="new-content" name="content">
+<form id="update-post" method="post" autocomplete="off">
+    <div id="title-editor-wrap"><input type="text" id="update-title" placeholder="INPUT TITLE" name="title" value="<%= result.title %>"></div>
+    <div id="content-editor" contenteditable="true"><%- result.content %></div>
+    <input type="hidden" id="update-content" name="content">
     <select name="catalog">
         <option value="Life">Life</option>
         <option value="Work">Work</option>

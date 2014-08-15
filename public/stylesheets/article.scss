@@ -8,11 +8,16 @@
   font-size: 1.1em;
   box-sizing: border-box;
 
+  ul {
+    margin: 0 1em;
+    padding-left: 40px;
+  }
+
   p {
     line-height: 150%;
     margin-bottom: 1em;
-    text-indent: 2em;
   }
+
 }
 
 #title {

@@ -1,0 +1,50 @@
+#content-editor {
+  width: 850px;
+  font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+  margin: 1em auto;
+  border: none;
+  min-height: 500px;
+  font-size: 1.3em;
+  background-color: transparent;
+  padding: 0.5em;
+  color: #888; }
+  #content-editor p {
+    line-height: 150%;
+    margin-bottom: 1em;
+    text-indent: 2em; }
+  #content-editor:focus {
+    outline: 1px dashed #00B7FF; }
+
+#title-editor-wrap {
+  font-size: 2em;
+  line-height: 3em;
+  font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+  text-align: center;
+  background: #eee; }
+  #title-editor-wrap #update-title {
+    background: transparent;
+    height: 100%;
+    display: inline-block;
+    font-size: 1.3em;
+    width: 100%;
+    text-align: center;
+    border: none;
+    vertical-align: middle;
+    padding: 0.5em 0;
+    border-bottom: 1px dashed transparent;
+    font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif; }
+    #title-editor-wrap #update-title:focus {
+      outline: none;
+      border-bottom: 1px dashed #00B7FF; }
+
+#submit-post {
+  width: 255px;
+  display: block;
+  height: 2em;
+  line-height: 2em;
+  border: solid;
+  border-width: 1px 1px 2px;
+  border-color: #ccc #ccc #444;
+  background-color: #fff;
+  text-align: center;
+  margin: 0.5em auto; }

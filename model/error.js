@@ -15,7 +15,14 @@ var errCode = {
     USER_REGISTER_SUCCESS: 7,
 
     NEED_LOGIN: 8,
-    USER_LOGOUT_SUCCESS: 9
+    USER_LOGOUT_SUCCESS: 9,
+
+    POST_SUCCESS: 10,
+    POST_FAIL: 11,
+    POST_NOT_EXIST: 12,
+    POST_NOT_ALLOW_COMMENT: 13,
+    POST_DELETE_FAIL: 14,
+    POST_DELETE_SUCCESS: 15
 };
 
 module.exports = errCode;

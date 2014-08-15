@@ -1,0 +1,30 @@
+@import "./variables.scss";
+
+$toolkit-height: 2em;
+#article-toolkit {
+
+  #article-toolkit-inner {
+    width: $page-width;
+    margin: 0 auto;
+    line-height: $toolkit-height;
+    height: $toolkit-height;
+    border: solid #aaa;
+    border-width: 0 0 1px;
+
+    .toolkit-item {
+      padding: 0 5px;
+      display: inline-block;
+      vertical-align: top;
+      text-decoration: none;
+      font-family: $paragraphs-font-stack;
+      cursor: pointer;
+      color: #444;
+
+      &:hover {
+        background: #eee;
+        border-bottom: 1px solid #000;
+        color: #666;
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 @import "./variables.scss";
 
-
 #nav {
   border-top: 5px solid #000;
   height: $nav-height;
@@ -33,6 +32,8 @@
   }
 
   #logo {
+    color: #000000;
+    text-decoration: none;
     float: left;
     font-family: $heading-font-stack;
   }
@@ -56,6 +57,7 @@
 
       &:hover {
         border-bottom: 1px solid black;
+
       }
     }
   }

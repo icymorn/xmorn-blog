@@ -1,17 +1,22 @@
 #paginator {
-  width: 850px;
   margin: 0 auto 1em;
-  font-size: 1.2em;
-  font-family: "Microsoft Yahei", "Droid Serif", serif; }
-  #paginator a {
+  font-size: 1em;
+  font-family: "Microsoft Yahei", "Droid Serif", serif;
+  text-align: center; }
+  #paginator #paginator-inner {
     display: inline-block;
-    padding: 0.25em;
-    text-decoration: none;
-    color: #666;
-    width: 1.75em;
-    text-align: center;
-    border: 1px solid #eee;
-    background: #ccc; }
+    border: 1px solid #aaa;
+    position: relative;
+    background: #fcfcfc; }
+    #paginator #paginator-inner a {
+      display: inline-block;
+      padding: 0.2em;
+      text-decoration: none;
+      color: #444;
+      width: 1.5em;
+      text-align: center; }
+      #paginator #paginator-inner a.active {
+        background: #9ebbff; }
 
 #footer {
   height: 5em;
@@ -38,10 +43,12 @@
   font-family: "Microsoft Yahei", "Droid Serif", serif;
   font-size: 1.1em;
   box-sizing: border-box; }
+  #article ul {
+    margin: 0 1em;
+    padding-left: 40px; }
   #article p {
     line-height: 150%;
-    margin-bottom: 1em;
-    text-indent: 2em; }
+    margin-bottom: 1em; }
 
 #title {
   font-size: 2em;
@@ -109,6 +116,8 @@
       display: block;
       clear: both; }
   #nav #logo {
+    color: #000000;
+    text-decoration: none;
     float: left;
     font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif; }
   #nav #menu {
@@ -203,16 +212,87 @@
   #title-editor-wrap #new-title {
     background: transparent;
     height: 100%;
+    line-height: 3em;
     display: inline-block;
-    font-size: 1.3em;
+    font-size: 1em;
     width: 100%;
     text-align: center;
     border: none;
     vertical-align: middle;
-    padding: 0.5em 0;
     border-bottom: 1px dashed transparent;
     font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif; }
     #title-editor-wrap #new-title:focus {
+      outline: none;
+      border-bottom: 1px dashed #00B7FF; }
+
+#submit-post {
+  width: 255px;
+  display: block;
+  height: 2em;
+  line-height: 2em;
+  border: solid;
+  border-width: 1px 1px 2px;
+  border-color: #ccc #ccc #444;
+  background-color: #fff;
+  text-align: center;
+  margin: 0.5em auto; }
+
+#article-toolkit #article-toolkit-inner {
+  width: 850px;
+  margin: 0 auto;
+  line-height: 2em;
+  height: 2em;
+  border: solid #aaa;
+  border-width: 0 0 1px; }
+  #article-toolkit #article-toolkit-inner .toolkit-item {
+    padding: 0 5px;
+    display: inline-block;
+    vertical-align: top;
+    text-decoration: none;
+    font-family: "Microsoft Yahei", "Droid Serif", serif;
+    cursor: pointer;
+    color: #444; }
+    #article-toolkit #article-toolkit-inner .toolkit-item:hover {
+      background: #eee;
+      border-bottom: 1px solid #000;
+      color: #666; }
+
+#content-editor {
+  width: 850px;
+  font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+  margin: 1em auto;
+  border: none;
+  min-height: 500px;
+  font-size: 1.3em;
+  background-color: transparent;
+  padding: 0.5em;
+  color: #888; }
+  #content-editor p {
+    line-height: 150%;
+    margin-bottom: 1em;
+    text-indent: 2em; }
+  #content-editor:focus {
+    outline: 1px dashed #00B7FF; }
+
+#title-editor-wrap {
+  font-size: 2em;
+  line-height: 3em;
+  font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif;
+  text-align: center;
+  background: #eee; }
+  #title-editor-wrap #update-title {
+    background: transparent;
+    height: 100%;
+    line-height: 3em;
+    display: inline-block;
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+    border: none;
+    vertical-align: middle;
+    border-bottom: 1px dashed transparent;
+    font-family: "Century Gothic", "Avant Garde Gothic", "Avant Garde", "URW Gothic L", helvetica, sans-serif; }
+    #title-editor-wrap #update-title:focus {
       outline: none;
       border-bottom: 1px dashed #00B7FF; }
 
