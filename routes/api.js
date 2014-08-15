@@ -89,9 +89,14 @@ router.post('/post/add', function(req, res) {
 router.get('/post/del/:postId', requireLogin);
 router.get('/post/del/:postId', function(req, res) {
     //todo delete post
-    var post = new Post('title', 'content', req.session.user.ObjectId, Date.now(), 'catalog', 5, 'tags');
-    post.save(function(err, post) {
-        return res.send(post);
+    var postId = req.params.postId;
+    Post.delete(postId, function(err) {
+        if (err) {
+            return req.send(Response(null, ErrCode.POST_DELETE_FAIL, 'en-us'));
+
+        } else {
+            return req.send(Response(null, ErrCode.POST_DELETE_SUCCESS, 'en-us'));
+        }
     });
 });
 

@@ -1,7 +1,7 @@
 #paginator {
   margin: 0 auto 1em;
   font-size: 1em;
-  font-family: "Microsoft Yahei", "Droid Serif", serif;
+  font-family: "Microsoft Yahei", "Lantinghei SC", serif;
   text-align: center; }
   #paginator #paginator-inner {
     display: inline-block;
@@ -28,7 +28,7 @@
   text-align: center; }
   #footer #footer-inner {
     color: #919191;
-    font-family: "Microsoft Yahei", "Droid Serif", serif;
+    font-family: "Microsoft Yahei", "Lantinghei SC", serif;
     width: 850px;
     display: inline-block;
     vertical-align: middle;
@@ -40,7 +40,7 @@
   width: 850px;
   padding-top: 2em;
   margin: 0 auto 2em;
-  font-family: "Microsoft Yahei", "Droid Serif", serif;
+  font-family: "Microsoft Yahei", "Lantinghei SC", serif;
   font-size: 1.1em;
   box-sizing: border-box; }
   #article ul {
@@ -184,7 +184,7 @@
   text-align: center;
   margin-top: -12em;
   font-size: 1.5em;
-  font-family: "Microsoft Yahei", "Droid Serif", serif; }
+  font-family: "Microsoft Yahei", "Lantinghei SC", serif; }
 
 #content-editor {
   width: 850px;
@@ -249,7 +249,7 @@
     display: inline-block;
     vertical-align: top;
     text-decoration: none;
-    font-family: "Microsoft Yahei", "Droid Serif", serif;
+    font-family: "Microsoft Yahei", "Lantinghei SC", serif;
     cursor: pointer;
     color: #444; }
     #article-toolkit #article-toolkit-inner .toolkit-item:hover {
@@ -307,6 +307,29 @@
   background-color: #fff;
   text-align: center;
   margin: 0.5em auto; }
+
+#article-setting {
+  width: 850px;
+  margin: 0 auto;
+  font-size: 1em;
+  border: 1px solid #D3D3D3;
+  padding: 0.5em; }
+  #article-setting label {
+    font-family: "Microsoft Yahei", "Lantinghei SC", serif;
+    width: 425px;
+    display: inline-block;
+    box-sizing: border-box; }
+  #article-setting #catalog {
+    font-size: 1em; }
+  #article-setting #tags {
+    border: none;
+    font-size: 1em;
+    border-bottom: 1px solid #444;
+    padding: 0.5em;
+    background: transparent; }
+    #article-setting #tags:focus {
+      outline: none;
+      border-bottom: 1px dashed #00B7FF; }
 
 * {
   margin: 0;

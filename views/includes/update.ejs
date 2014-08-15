@@ -2,12 +2,12 @@
     <div id="title-editor-wrap"><input type="text" id="update-title" placeholder="INPUT TITLE" name="title" value="<%= result.title %>"></div>
     <div id="content-editor" contenteditable="true"><%- result.content %></div>
     <input type="hidden" id="update-content" name="content">
-    <select name="catalog">
-        <option value="Life">Life</option>
-        <option value="Work">Work</option>
-        <option value="Other">Other</option>
-    </select>
-    <label for="allow-comment"><input id="allow-comment" type="checkbox" name="allowComment">Allow Comment</label>
-    <input type="input" placeholder="tags" name="tags">
+    <div id="article-setting"><label for="catalog">Select a catalog:
+            <select name="catalog" id="catalog">
+                <option value="Life">Life</option>
+                <option value="Work">Work</option>
+                <option value="Other">Other</option>
+            </select>
+        </label><label for="tags">Input some tags:<input type="input" placeholder="tags" id="tags" name="tags"></label><label for="allow-comment"><input id="allow-comment" type="checkbox" checked name="allowComment"> Allow Comment</label><label for="private"><input id="private" type="checkbox" name="private"> Set as private</label></div>
     <a id="submit-post">POST IT</a>
 </form>
