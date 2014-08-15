@@ -45,7 +45,7 @@ Post.prototype.save = function (callback) {
     });
 };
 
-Post.delete = function(id, callback) {
+Post.deleteById = function(id, callback) {
     mongodb.collection('post', function(err, collection) {
         if (err) {
             return callback(err);

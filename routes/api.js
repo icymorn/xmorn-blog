@@ -93,7 +93,6 @@ router.get('/post/del/:postId', function(req, res) {
     Post.delete(postId, function(err) {
         if (err) {
             return req.send(Response(null, ErrCode.POST_DELETE_FAIL, 'en-us'));
-
         } else {
             return req.send(Response(null, ErrCode.POST_DELETE_SUCCESS, 'en-us'));
         }

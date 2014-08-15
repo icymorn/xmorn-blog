@@ -41,9 +41,9 @@ router.post('/add', function(req, res) {
     var content = req.param('content', '');
     var catalog = req.param('catalog', 'Default');
     var tags = req.param('tags', '');
-    var private = parseInt(req.param('private', 0));
+    var isPrivate = parseInt(req.param('private', 0));
     var allowComment = parseInt(req.param('allowComment', 1));
-    var post = new Post(title, content, req.session.user._id, Date.now(), catalog, 0, '', (private === 1)? true: false, (allowComment === 1)? true: false);
+    var post = new Post(title, content, req.session.user._id, Date.now(), catalog, 0, '', (isPrivate === 1)? true: false, (allowComment === 1)? true: false);
     post.save(function (err, post) {
         if (err) {
             req.flash('response', Response(post, error.POST_FAIL, 'en-us'));
@@ -78,7 +78,7 @@ router.get('/del/:postId', util.requireLogin);
 
 router.get('/del/:postId', function(req, res) {
     var postId = req.params.postId;
-    Post.delete(postId, function(err){
+    Post.deleteById(postId, function(err){
         if (err) {
             req.flash('response', Response(null, error.POST_DELETE_FAIL, 'en-us'));
             return res.redirect('/info/?redirect=' + encodeURI('/post/' + postId));
