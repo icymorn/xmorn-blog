@@ -29,7 +29,9 @@ Post.prototype.save = function (callback) {
         time :this.time,
         catalog :this.catalog,
         views :this.views,
-        tags :this.tags
+        tags :this.tags,
+        'private': this.private,
+        allowComment: this.allowComment
     };
     // todo: check if is exist.
     mongodb.collection('post', function(err, collection) {

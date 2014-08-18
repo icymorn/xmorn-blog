@@ -1,12 +1,14 @@
-<form id="comment-form">
-    <div id="comment-title">Comments</div>
+<% if (result.allowComment) {%>
+    <form id="comment-form">
+        <div id="comment-title">Comments</div>
 
-    <input type="text" class="comment-input" placeholder="Your name" id="comment-user-name">
-    <input type="text" class="comment-input" placeholder="Email(will not be public)" id="comment-email">
-    <textarea id="comment-content" placeholder="Content"></textarea>
-    <input type="submit" value="Comment it">
-    <input type="hidden" id="post-id" value="<%= result._id %>">
-</form>
+        <input type="text" class="comment-input" autocomplete="off" placeholder="Your name" id="comment-username">
+        <input type="text" class="comment-input" autocomplete="off" placeholder="Email(will not be public)" id="comment-email">
+        <textarea id="comment-content" autocomplete="off" placeholder="Content"></textarea>
+        <input type="submit" value="Comment it" id="comment-it">
+        <input type="hidden" id="post-id" value="<%= result._id %>">
+    </form>
+<% } %>
 <ul id="comment-list">
 
     <% result.comments.forEach(function(comment, i){ %>

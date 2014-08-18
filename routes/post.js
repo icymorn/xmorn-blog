@@ -42,9 +42,9 @@ router.post('/add', function(req, res) {
     var content = req.param('content', '');
     var catalog = req.param('catalog', 'Default');
     var tags = req.param('tags', '');
-    var isPrivate = parseInt(req.param('private', 0));
-    var allowComment = parseInt(req.param('allowComment', 1));
-    var post = new Post(title, content, req.session.user._id, Date.now(), catalog, 0, '', (isPrivate === 1)? true: false, (allowComment === 1)? true: false);
+    var isPrivate = req.param('private', 'off');
+    var allowComment = req.param('allowComment', 'on');
+    var post = new Post(title, content, req.session.user._id, Date.now(), catalog, 0, '', (isPrivate === 'on')? true: false, (allowComment === 'on')? true: false);
     post.save(function (err, post) {
         if (err) {
             req.flash('response', Response(post, error.POST_FAIL, 'en-us'));
@@ -104,7 +104,10 @@ router.post('/edit/:postId', function(req, res) {
     var content = req.param('content', '');
     var tags = req.param('tags', '');
     var catalog = req.param('catalog', '');
-    var post = new Post(title, content, null, null, catalog, null, tags, postId);
+    var isPrivate = parseInt(req.param('private', 0));
+    var allowComment = parseInt(req.param('allowComment', 1));
+    var post = new Post(title, content, req.session.user._id, Date.now(), catalog, 0, '', (isPrivate === 1)? true: false, (allowComment === 1)? true: false);
+
     post.update(function(err, post){
         if (err) {
             req.flash('response', Response(post, error.POST_NOT_EXIST, 'en-us'));

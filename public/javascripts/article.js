@@ -13,6 +13,20 @@ morn.ready(function(){
             morn.event(e).preventDefault();
         }
     });
+    var link = morn(".icon-link").get(0);
+    if (link) {
+        link.innerHTML = window.location.href;
+    }
+    morn("#comment-it").click(function(e){
+        morn.event(e).preventDefault();
 
-    morn(".icon-link").get(0).innerHTML = window.location.href;
+        morn.post('/api/comment/add/' + morn("#post-id").get(0).value, {
+            username: morn("#comment-username").get(0).value,
+            content: morn("#comment-content").get(0).value,
+            email: morn("#comment-email").get(0).value
+        }, function(data){
+
+        });
+    });
+
 });

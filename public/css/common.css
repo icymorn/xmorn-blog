@@ -358,7 +358,7 @@
 
 #comment-form {
   width: 850px;
-  margin: 0 auto; }
+  margin: 1em auto; }
   #comment-form #comment-title {
     font-family: "Microsoft Yahei", "Lantinghei SC", serif;
     padding: 5px;
