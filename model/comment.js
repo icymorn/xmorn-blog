@@ -37,7 +37,8 @@ Comment.prototype.save = function (callback) {
         if (err) {
             return callback(err);
         }
-        collection.insert(newComment, {safe: true}, function(err, user) {
+
+        collection.insert(newComment, {safe: true}, function(err, comment) {
             if (err) {
                 return callback(err);
             }
@@ -58,7 +59,7 @@ Comment.getByPostId = function (id, callback) {
             return callback(err);
         }
 
-        var cursor = collection.find().sort({time: -1});
+        var cursor = collection.find({postId: id}).sort({time: -1});
         cursor.toArray(function(err, comments) {
             if (err) {
                 console.error(err);
@@ -84,5 +85,16 @@ Comment.deleteAllFromPost = function( postID, callback) {
     });
 };
 
+Comment.deleteById = function(id, callback) {
+    mongodb.collection('comment', function(err, collection) {
+        if (err) {
+            return callback(err);
+        }
+
+        collection.remove({_id: ObjectID(id)}, function(err){
+            callback(err);
+        });
+    });
+};
 
 module.exports = Comment;

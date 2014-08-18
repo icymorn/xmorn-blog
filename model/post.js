@@ -95,6 +95,7 @@ Post.getById = function (id, callback) {
             if (err) {
                 return callback(err);
             }
+
             callback(null, post);
         });
     });

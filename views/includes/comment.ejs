@@ -1,0 +1,19 @@
+<ul id="comment-list">
+    <div id="comment-title">Comments</div>
+    <form id="comment-form">
+        <input type="text" class="comment-input" placeholder="Your name" id="comment-user-name">
+        <input type="text" class="comment-input" placeholder="Email(will not be public)" id="comment-email">
+        <textarea id="comment-content" placeholder="Content"></textarea>
+        <input type="submit" value="Comment it">
+        <input type="hidden" id="post-id" value="<%= result._id %>">
+    </form>
+    <% result.comments.forEach(function(comment, i){ %>
+    <li class="comment">
+        <div class="comment-header">
+            <img>head
+        </div>
+        <span class="comment-time">time</span>
+        <div class="comment-content"></div>
+    </li>
+    <% }) %>
+</ul>

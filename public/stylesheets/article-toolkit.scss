@@ -1,6 +1,6 @@
 @import "./variables.scss";
 
-$toolkit-height: 2em;
+$toolkit-height: 1.5em;
 #article-toolkit {
 
   #article-toolkit-inner {
@@ -16,6 +16,7 @@ $toolkit-height: 2em;
       display: inline-block;
       vertical-align: top;
       text-decoration: none;
+      font-size: 0.9em;
       font-family: $paragraphs-font-stack;
       cursor: pointer;
       color: #444;

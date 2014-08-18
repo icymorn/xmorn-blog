@@ -7,6 +7,7 @@ var router = express.Router();
 var settings = require('../setting.js').setting;
 var util = require('./util.js');
 var Response = require("../model/response.js");
+var Comment = require("../model/comment.js");
 var error = require("../model/error.js");
 var markdown = require( "markdown" ).markdown;
 
@@ -84,8 +85,14 @@ router.get('/del/:postId', function(req, res) {
             return res.redirect('/info/?redirect=' + encodeURI('/post/' + postId));
         }
 
-        req.flash('response', Response(null, error.POST_DELETE_SUCCESS, 'en-us'));
-        return res.redirect('/info/?redirect=' + encodeURI('/'));
+        Comment.deleteAllFromPost(postId, function(err) {
+            if (err) {
+                req.flash('response', Response(null, error.COMMENT_DEL_FAIL, 'en-us'));
+                return res.redirect('/info/?redirect=' + encodeURI('/'));
+            }
+            req.flash('response', Response(null, error.POST_DELETE_SUCCESS, 'en-us'));
+            return res.redirect('/info/?redirect=' + encodeURI('/'));
+        });
     });
 });
 
@@ -115,14 +122,26 @@ router.get('/:postId', function(req, res) {
             req.flash('response', Response(post, error.POST_NOT_EXIST, 'en-us'));
             return res.redirect('/info/?redirect=' + encodeURI('/'));
         }
-        Post.addPV(post._id.toString());
-        post.content = markdown.toHTML(post.content);
-        return res.render('article', {
-            title: post.title,
-            result: post,
-            login: !!req.session.user
+        if (post === null) {
+            req.flash('response', Response(post, error.POST_NOT_EXIST, 'en-us'));
+            return res.redirect('/info/?redirect=' + encodeURI('/'));
+        }
+        Comment.getByPostId(postId, function(err, comments){
+            if (err) {
+                post.comments = [];
+            } else {
+                post.comments = comments;
+            }
+            Post.addPV(post._id.toString());
+            post.content = markdown.toHTML(post.content);
+            return res.render('article', {
+                title: post.title,
+                result: post,
+                login: !!req.session.user
+            });
         });
     });
+
 });
 
 module.exports = router;

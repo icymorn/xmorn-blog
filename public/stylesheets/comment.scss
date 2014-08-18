@@ -1,0 +1,45 @@
+@import "./variables.scss";
+
+#comment-list {
+  width: $page-width / 3 * 2;
+  left: 50%;
+  position: relative;
+  margin-left: - $page-width / 2;
+
+  #comment-title {
+    font-family: $paragraphs-font-stack;
+    padding: 0.5em;
+    background-color: #ccc;
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  .comment-input {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 0.9em;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    margin: 5px 0;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.3s;
+
+    &:focus {
+      border-bottom: solid 2px #969696;
+      outline: none;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 0.9em;
+    padding: 10px;
+    box-sizing: border-box;
+    border: solid 2px #c9c9c9;
+    height: 4em;
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -5,7 +5,7 @@ var express = require('express');
 var router = express.Router();
 var md5 = require("md5");
 var User = require("../model/user.js");
-var Post = require("../model/post.js");
+var Comment = require("../model/comment.js");
 var Response = require("../model/response.js");
 var ErrCode = require("../model/error.js");
 
@@ -119,9 +119,33 @@ router.get('/post/offset/:offset/:count', function(req, res) {
     var count = parseInt(req.params.count);
     // todo: exam input value
     Post.get(offset, count, function(err, posts) {
-        res.send(posts);
+        return res.send(err);
     });
 
+});
+
+router.post('/comment/add/:postId', function(req, res) {
+    var postId = req.params.postId;
+    var content = req.param('content', null);
+    var username = req.param('username', null);
+    var email = req.param('email', null);
+    var comment = new Comment(email, username, Date.now(), postId, content);
+    comment.save(function(err, comment) {
+       if (err) {
+           return res.send(Response(null, ErrCode.COMMENT_ADD_FAIL, 'en-us'));
+       }
+       return res.send(Response(comment, ErrCode.COMMENT_ADD_FAIL, 'en-us'));
+    });
+});
+
+router.get('/comment/del/:commentId', function(req, res) {
+    var commentId = req.params.commentId;
+    Comment.deleteById(commentId, function(err) {
+        if (err) {
+            return res.send(Response(err, ErrCode.COMMENT_DEL_FAIL, 'en-us'));
+        }
+        return res.send(Response(null, ErrCode.COMMENT_DEL_SUCCESS, 'en-us'));
+    });
 });
 
 module.exports = router;

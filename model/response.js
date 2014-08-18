@@ -23,7 +23,14 @@ var error = {
         12: 'Post does not exist.',
         13: 'This post is locked for comments,',
         14: 'Delete fail.',
-        15: 'Delete successfully.'
+        15: 'Delete successfully.',
+        16: 'Updated.',
+        17: 'Updated Failed',
+
+        18: 'Comment added.',
+        19: 'Failed to comment',
+        20: 'Deleted comment',
+        21: 'Failed to detele comment'
     }
 };
 
