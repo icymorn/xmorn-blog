@@ -104,9 +104,9 @@ router.post('/edit/:postId', function(req, res) {
     var content = req.param('content', '');
     var tags = req.param('tags', '');
     var catalog = req.param('catalog', '');
-    var isPrivate = parseInt(req.param('private', 0));
-    var allowComment = parseInt(req.param('allowComment', 1));
-    var post = new Post(title, content, req.session.user._id, Date.now(), catalog, 0, '', (isPrivate === 1)? true: false, (allowComment === 1)? true: false);
+    var isPrivate = req.param('private', 'off');
+    var allowComment = req.param('allowComment', 'off');
+    var post = new Post(title, content, req.session.user._id, Date.now(), catalog, 0, tags, (isPrivate === 'on')? true: false, (allowComment === 'on')? true: false, postId);
 
     post.update(function(err, post){
         if (err) {

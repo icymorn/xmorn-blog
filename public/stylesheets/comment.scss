@@ -23,10 +23,11 @@ $comment-header-size: 50px;
 
     .comment-user {
       font-weight: bold;
+      margin-left: $comment-header-size + 10px;
     }
 
     .comment-content {
-      margin-left: $comment-header-size + 10px;
+      margin-left: $comment-header-size + 15px;
     }
 
   &:after {
@@ -50,7 +51,6 @@ $comment-header-size: 50px;
 
   .comment-input {
     box-sizing: border-box;
-    width: 100%;
     font-size: 0.9em;
     padding: 8px;
     border: none;
@@ -65,9 +65,19 @@ $comment-header-size: 50px;
     }
   }
 
+  #comment-username{
+    width: 20%;
+  }
+
+  #comment-email{
+    width: 0.8 * $page-width - 5px;
+    margin-left: 5px;
+  }
+
   textarea {
     width: 100%;
     font-size: 0.9em;
+    font-family: $paragraphs-font-stack;
     padding: 10px;
     box-sizing: border-box;
     border: solid 2px #c9c9c9;

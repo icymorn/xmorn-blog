@@ -34,3 +34,16 @@ body, html {
 #container {
   padding-bottom: $footer-height;
 }
+
+.button {
+  height: 2em;
+  font-size: 1em;
+  line-height: 2em;
+  border: solid;
+  padding: 0 1em;
+  border-width: 1px 1px 2px;
+  border-color: #ccc #ccc #444;
+  background-color: #fff;
+  text-align: center;
+  margin: 0.5em auto;
+}

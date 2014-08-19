@@ -348,9 +348,10 @@
       width: 50px;
       height: 50px; }
     #comment-list .comment .comment-user {
-      font-weight: bold; }
-    #comment-list .comment .comment-content {
+      font-weight: bold;
       margin-left: 60px; }
+    #comment-list .comment .comment-content {
+      margin-left: 65px; }
     #comment-list .comment:after {
       content: '';
       display: block;
@@ -367,7 +368,6 @@
     display: inline-block; }
   #comment-form .comment-input {
     box-sizing: border-box;
-    width: 100%;
     font-size: 0.9em;
     padding: 8px;
     border: none;
@@ -378,9 +378,15 @@
     #comment-form .comment-input:focus {
       border-bottom: solid 2px #969696;
       outline: none; }
+  #comment-form #comment-username {
+    width: 20%; }
+  #comment-form #comment-email {
+    width: 675px;
+    margin-left: 5px; }
   #comment-form textarea {
     width: 100%;
     font-size: 0.9em;
+    font-family: "Microsoft Yahei", "Lantinghei SC", serif;
     padding: 10px;
     box-sizing: border-box;
     border: solid 2px #c9c9c9;
@@ -404,3 +410,15 @@ body, html {
 
 #container {
   padding-bottom: 5em; }
+
+.button {
+  height: 2em;
+  font-size: 1em;
+  line-height: 2em;
+  border: solid;
+  padding: 0 1em;
+  border-width: 1px 1px 2px;
+  border-color: #ccc #ccc #444;
+  background-color: #fff;
+  text-align: center;
+  margin: 0.5em auto; }

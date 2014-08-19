@@ -65,7 +65,7 @@ Post.prototype.update = function (callback) {
         catalog :this.catalog,
         tags :this.tags,
         allowComment: this.allowComment,
-        private: this.private
+        'private': this.private
     };
     var id = this._id;
     // todo: check if is exist.

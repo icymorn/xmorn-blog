@@ -8,6 +8,6 @@
                 <option value="Work">Work</option>
                 <option value="Other">Other</option>
             </select>
-        </label><label for="tags">Input some tags:<input type="input" placeholder="tags" id="tags" name="tags"></label><label for="allow-comment"><input id="allow-comment" type="checkbox" checked name="allowComment"> Allow Comment</label><label for="private"><input id="private" type="checkbox" name="private"> Set as private</label></div>
+        </label><label for="tags">Input some tags:<input type="input" placeholder="tags" id="tags" name="tags" value="<%= result.tags %>"></label><label for="allow-comment"><input id="allow-comment" type="checkbox" <%= (result.allowComment)?'checked':'' %> value="on" name="allowComment"> Allow Comment</label><label for="private"><input id="private" type="checkbox" <%= (result.allowComment)?'checked':'' %> name="private" value="on"> Set as private</label></div>
     <input type="submit" id="submit-post" value="UPDATE IT">
 </form>
