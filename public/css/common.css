@@ -335,12 +335,12 @@
 
 #comment-list {
   width: 566.66667px;
-  left: 50%;
-  position: relative;
-  margin-left: -425px; }
+  margin: 0 auto;
+  position: relative; }
   #comment-list .comment {
     list-style: none;
-    padding: 5px; }
+    padding: 5px 5px 10px;
+    border-bottom: 1px dashed #ccc; }
     #comment-list .comment .comment-header {
       border-radius: 50%;
       float: left;

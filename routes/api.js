@@ -129,7 +129,7 @@ router.post('/comment/add/:postId', function(req, res) {
     var content = req.param('content', null);
     var username = req.param('username', null);
     var email = req.param('email', null);
-    var comment = new Comment(email, username, Date.now(), postId, content);
+    var comment = new Comment(email, username, Date.now(), postId, content, md5.digest_s(email));
     comment.save(function(err, comment) {
        if (err) {
            return res.send(Response(null, ErrCode.COMMENT_ADD_FAIL, 'en-us'));

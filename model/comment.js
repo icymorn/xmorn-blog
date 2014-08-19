@@ -13,12 +13,13 @@ var mongodb = require('./db.js');
  * @param content
  * @constructor
  */
-function Comment(email, username, time, postId, content){
+function Comment(email, username, time, postId, content, header){
     this.email = email;
     this.username = username;
     this.time = time;
     this.postId = postId;
     this.content = content;
+    this.header = header;
 }
 /**
  * save comment
@@ -30,7 +31,8 @@ Comment.prototype.save = function (callback) {
         username: this.username,
         time: this.time,
         postId: this.postId,
-        content: this.content
+        content: this.content,
+        header: this.header
     };
     // todo: check if is exist.
     mongodb.collection('comment', function(err, collection) {

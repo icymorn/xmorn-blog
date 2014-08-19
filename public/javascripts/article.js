@@ -25,7 +25,10 @@ morn.ready(function(){
             content: morn("#comment-content").get(0).value,
             email: morn("#comment-email").get(0).value
         }, function(data){
-
+            data = JSON.parse(data);
+            var newComment = morn.createDom('<li class="comment"><img class="comment-header" src="http://www.gravatar.com/avatar/' + data.result.header + '"><div class="comment-user">' + data.result.username + '</div><div class="comment-content">' + data.result.content + '</div></li>');
+            morn("#comment-list").append(newComment);
+            console.log(data)
         });
     });
 

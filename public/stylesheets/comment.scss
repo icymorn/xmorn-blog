@@ -4,14 +4,13 @@ $comment-header-size: 50px;
 
 #comment-list {
   width: $page-width / 3 * 2;
-  left: 50%;
+  margin: 0 auto;
   position: relative;
-  margin-left: - $page-width / 2;
-
 
   .comment {
     list-style: none;
-    padding: 5px;
+    padding: 5px 5px 10px;
+    border-bottom: 1px dashed #ccc;
 
     .comment-header {
       border-radius: 50%;
