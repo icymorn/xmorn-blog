@@ -352,6 +352,8 @@
       margin-left: 60px; }
     #comment-list .comment .comment-content {
       margin-left: 65px; }
+    #comment-list .comment .del-comment {
+      float: right; }
     #comment-list .comment:after {
       content: '';
       display: block;

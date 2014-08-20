@@ -61,7 +61,7 @@ Comment.getByPostId = function (id, callback) {
             return callback(err);
         }
 
-        var cursor = collection.find({postId: id}).sort({time: -1});
+        var cursor = collection.find({postId: id});
         cursor.toArray(function(err, comments) {
             if (err) {
                 console.error(err);

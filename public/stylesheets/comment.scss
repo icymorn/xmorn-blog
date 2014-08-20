@@ -29,6 +29,10 @@ $comment-header-size: 50px;
       margin-left: $comment-header-size + 15px;
     }
 
+    .del-comment {
+      float: right;
+    }
+
   &:after {
     content: '';
     display: block;

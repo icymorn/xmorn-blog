@@ -11,6 +11,6 @@
 <ul id="comment-list">
 
     <% result.comments.forEach(function(comment, i){ %>
-    <li class="comment"><img class="comment-header" src="http://www.gravatar.com/avatar/<%= comment.header %>"><div class="comment-user"><%= comment.username%></div><div class="comment-content"><%= comment.content %></div></li>
+    <li class="comment"><img class="comment-header" src="http://www.gravatar.com/avatar/<%= comment.header %>"><div class="comment-user"><%= comment.username%></div><div class="comment-content"><%= comment.content %></div><a class="icon-trash del-comment"></a></li>
     <% }) %>
 </ul>

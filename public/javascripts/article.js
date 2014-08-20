@@ -2,18 +2,18 @@
  * Created by v-jiangz on 8/15/2014.
  */
 morn.ready(function(){
-    morn(".icon-lock").click(function(){
+    morn("#article-toolkit .icon-lock").click(function(){
 
     });
 
-    morn(".icon-trash").click(function(e){
+    morn("#article-toolkit .icon-trash").click(function(e){
         if (confirm("Would you confirm to delete it?")) {
 
         } else {
             morn.event(e).preventDefault();
         }
     });
-    var link = morn(".icon-link").get(0);
+    var link = morn("article-toolkit .icon-link").get(0);
     if (link) {
         link.innerHTML = window.location.href;
     }
