@@ -134,7 +134,7 @@ router.post('/comment/add/:postId', function(req, res) {
        if (err) {
            return res.send(Response(null, ErrCode.COMMENT_ADD_FAIL, 'en-us'));
        }
-       return res.send(Response(comment, ErrCode.COMMENT_ADD_FAIL, 'en-us'));
+       return res.send(Response(comment, ErrCode.COMMENT_ADD_SUCCESS, 'en-us'));
     });
 });
 
